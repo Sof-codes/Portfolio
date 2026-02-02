@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIKSHA BHALERAO // LUXURY PORTFOLIO</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+    <div id="loader" class="loader-container">
+        <div class="loader-text">
+            <span class="load-word">DIKSHA</span>
+            <span class="load-word">BHALERAO</span>
+            <span class="load-word">ARCHIVE</span>
+        </div>
+        <div class="loader-bar-bg">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <nav class="moncler-nav">
+        <div class="nav-brand mag">DIKSHA BHALERAO // 2026</div>
+        <div class="nav-links">
+            <a href="#about" class="mag">ABOUT</a>
+            <a href="#education" class="mag">EDUCATION</a>
+            <a href="#skills" class="mag">COMPETENCIES</a>
+            <a href="https://github.com/DIKSHABHALERAO" target="_blank" class="mag">GITHUB</a>
+            <a href="#contact" class="nav-cta mag">CONTACT</a>
+        </div>
+    </nav>
+
+    <main id="main-wrapper">
+        <section class="hero-minimal" id="home">
+            <div class="hero-content">
+                <div class="pre-title reveal">BCA SCIENCE // 3RD YEAR</div>
+                <div class="title-wrap">
+                    <h1 class="huge-text reveal">DIKSHA</h1>
+                    <h1 class="huge-text outline reveal">BHALERAO</h1>
+                </div>
+                <div class="hero-footer reveal">
+                    <div class="h-col">
+                        <p class="label-mini">CURRENT STATUS</p>
+                        <p>PCCCS COLLEGE, PUNE</p>
+                    </div>
+                    <div class="h-col">
+                        <p class="label-mini">CORE FOCUS</p>
+                        <p>SYSTEM ARCHITECTURE & DESIGN</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="label">01 // PHILOSOPHY</div>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <h2 class="serif">Merging logic with aesthetic precision.</h2>
+                    <p>I am a developer who believes in the beauty of structured code and the elegance of purposeful
+                        design. My journey is defined by a relentless pursuit of technical excellence combined with a
+                        passion for creative expression.</p>
+                </div>
+                <div class="interests-box reveal">
+                    <p class="label-mini">INTERESTS</p>
+                    <ul class="interest-list">
+                        <li>SKETCHING</li>
+                        <li>READING BOOKS</li>
+                        <li>WRITING SONGS</li>
+                        <li>JOURNALING</li>
+                        <li>DESIGNING</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section gray-bg" id="education">
+            <div class="label">02 // ACADEMIC ARC</div>
+            <div class="edu-timeline">
+                <div class="edu-item reveal active" onclick="toggleEdu(this)">
+                    <div class="edu-header">
+                        <span class="edu-year">PRESENT</span>
+                        <h3 class="edu-title">BCA SCIENCE (3RD YEAR)</h3>
+                        <span class="edu-plus">+</span>
+                    </div>
+                    <div class="edu-body">
+                        <p>Prathibha College of Commerce and Computer Studies (PCCCS). Focusing on advanced computing,
+                            software engineering, and database management.</p>
+                    </div>
+                </div>
+                <div class="edu-item reveal" onclick="toggleEdu(this)">
+                    <div class="edu-header">
+                        <span class="edu-year">2021 - 2023</span>
+                        <h3 class="edu-title">SNBP COLLEGE</h3>
+                        <span class="edu-plus">+</span>
+                    </div>
+                    <div class="edu-body">
+                        <p>Completed 11th and 12th Grade. Strong foundation in science and mathematics, paving the way
+                            for technical studies.</p>
+                    </div>
+                </div>
+                <div class="edu-item reveal" onclick="toggleEdu(this)">
+                    <div class="edu-header">
+                        <span class="edu-year">FOUNDATION</span>
+                        <h3 class="edu-title">PK INTERNATIONAL SCHOOL</h3>
+                        <span class="edu-plus">+</span>
+                    </div>
+                    <div class="edu-body">
+                        <p>Primary and Secondary education (1st to 10th). Cultivated early analytical skills and a
+                            passion for learning.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="skills">
+            <div class="label">03 // TOOLKIT</div>
+            <div class="skills-showcase">
+                <div class="skill-category reveal">
+                    <h3>SYSTEMS & BACKEND</h3>
+                    <div class="skill-tags">
+                        <span>JAVA</span>
+                        <span>PHP</span>
+                        <span>NODE.JS</span>
+                        <span>PYTHON</span>
+                        <span>C / C++</span>
+                        <span>R PROGRAMMING</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <h3>DATA ARCHITECTURE</h3>
+                    <div class="skill-tags">
+                        <span>MYSQL</span>
+                        <span>SQL</span>
+                        <span>PGSQL</span>
+                        <span>POSTGRESQL</span>
+                        <span>PYTHON (ML/DATA)</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <h3>INTERFACE & WEB</h3>
+                    <div class="skill-tags">
+                        <span>REACT</span>
+                        <span>JAVASCRIPT</span>
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>UI/UX DESIGN</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="portfolio">
+            <div class="label">04 // SELECTED ARCHIVE</div>
+            <div class="work-list">
+                <div class="work-item reveal" data-img="project_1_reveal_1770017669024.png">
+                    <div class="work-info">
+                        <span class="work-no">01</span>
+                        <h3>MINDMAP UI</h3>
+                        <p>INTERACTIVE KNOWLEDGE GRAPH ARCHITECTURE</p>
+                    </div>
+                    <a href="https://sof-codes.github.io/Frontend-ui/" target="_blank" class="work-visit mag">EXECUTE
+                        ◹</a>
+                </div>
+                <div class="work-item reveal" data-img="project_1_reveal_1770017669024.png">
+                    <div class="work-info">
+                        <span class="work-no">02</span>
+                        <h3>BOOKHAVEN</h3>
+                        <p>FULL-STACK LIBRARY REDESIGN & DATA LOGIC</p>
+                    </div>
+                    <a href="https://sof-codes.github.io/BookHaven/" target="_blank" class="work-visit mag">EXECUTE
+                        ◹</a>
+                </div>
+            </div>
+            <div id="hover-image-container"></div>
+        </section>
+
+        <section class="section achievements-sec">
+            <div class="label">05 // MILESTONES</div>
+            <div class="accordion-container">
+                <div class="acc-item reveal" onclick="toggleAcc(this)">
+                    <div class="acc-header">
+                        <h3>ACHIEVEMENTS</h3>
+                        <span class="acc-icon">↓</span>
+                    </div>
+                    <div class="acc-content">
+                        <ul class="ach-list">
+                            <li>3rd Place Winner // Elocution Competition</li>
+                            <li>Academic Excellence // Consistent 9.0+ SGPA</li>
+                            <li>Professional Development // Multi-domain Technical Certifications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <div class="footer-main">
+                <div class="footer-cta">
+                    <span class="reveal">READY FOR COLLABORATION?</span>
+                    <h2 class="reveal">LET'S BUILD.</h2>
+                    <a href="mailto:diksha@email.com" class="footer-email mag reveal">DIKSHA@PCCCS.EDU</a>
+                </div>
+                <div class="footer-links-grid">
+                    <div class="f-group reveal">
+                        <p class="label-mini">SOCIAL</p>
+                        <a href="https://github.com/DIKSHABHALERAO" target="_blank" class="mag">GITHUB ↗</a>
+                        <a href="#" class="mag">LINKEDIN ↗</a>
+                        <a href="#" class="mag">INSTAGRAM ↗</a>
+                    </div>
+                    <div class="f-group reveal">
+                        <p class="label-mini">LOCATION</p>
+                        <p>PUNE, INDIA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="f-copy">&copy; 2026 DIKSHA BHALERAO. ALL RIGHTS RESERVED.</div>
+                <div class="f-time" id="clock">00:00:00</div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
