@@ -1,7 +1,7 @@
 // CURSOR
 
-const dot = document.getElementById("curDot");
-const ring = document.getElementById("curRing");
+const dot = document.getElementById('curDot');
+const ring = document.getElementById('curRing');
 
 let mx = 0;
 let my = 0;
@@ -9,122 +9,147 @@ let my = 0;
 let rx = 0;
 let ry = 0;
 
-window.addEventListener("mousemove", (e) => {
-  mx = e.clientX;
-  my = e.clientY;
+window.addEventListener('mousemove', (e) => {
+    mx = e.clientX;
+    my = e.clientY;
 });
 
 (function animateCursor() {
 
-  rx += (mx - rx) * 0.12;
-  ry += (my - ry) * 0.12;
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
 
-  dot.style.left = mx + "px";
-  dot.style.top = my + "px";
+    dot.style.left = mx + 'px';
+    dot.style.top = my + 'px';
 
-  ring.style.left = rx + "px";
-  ring.style.top = ry + "px";
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
 
-  requestAnimationFrame(animateCursor);
+    requestAnimationFrame(animateCursor);
 
 })();
 
 // LOADER
 
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
 
-  const tl = gsap.timeline({
-    onComplete: () => {
+    const tl = gsap.timeline({
 
-      document.getElementById("loader").style.display = "none";
+        onComplete: () => {
 
-      gsap.to(
-        ["#hn1", "#hn2"],
-        {
-          y: "0%",
-          stagger: 0.15,
-          duration: 1,
-          ease: "power4.out"
+            document.getElementById('loader').style.display = 'none';
+
+            gsap.to('#heroEye', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: 0.1
+            });
+
+            gsap.to(['#hn1', '#hn2'], {
+                y: '0%',
+                stagger: 0.15,
+                duration: 1,
+                ease: 'power4.out',
+                delay: 0.2
+            });
+
+            gsap.to('#heroDesc', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: 0.5
+            });
+
+            gsap.to('#heroScroll', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: 0.7
+            });
         }
-      );
 
-    }
-  });
+    });
 
-  tl.to("#ld1", {
-    y: "0%",
-    duration: 0.7,
-    ease: "power4.out"
-  })
+    tl.to('#ld1', {
+        y: '0%',
+        duration: 0.7,
+        ease: 'power4.out'
+    })
 
-  .to("#ld2", {
-    y: "0%",
-    duration: 0.7,
-    ease: "power4.out"
-  }, "-=.4")
+    .to('#ld2', {
+        y: '0%',
+        duration: 0.7,
+        ease: 'power4.out'
+    }, '-=.4')
 
-  .to("#ldSub", {
-    opacity: 1,
-    duration: 0.5
-  }, "-=.2")
+    .to('#ldSub', {
+        opacity: 1,
+        duration: 0.5
+    }, '-=.2')
 
-  .to("#ldBar", {
-    width: "100%",
-    duration: 1.2,
-    ease: "power2.inOut"
-  }, "-=.3")
+    .to('#ldBar', {
+        width: '100%',
+        duration: 1.2,
+        ease: 'power2.inOut'
+    }, '-=.3')
 
-  .to("#loader", {
-    y: "-100%",
-    duration: .9,
-    ease: "power4.inOut"
-  });
+    .to(['#ld1', '#ld2'], {
+        y: '-110%',
+        stagger: 0.08,
+        duration: 0.5,
+        ease: 'power4.in'
+    }, '+=.1')
 
-});
-
-// SCROLL BAR
-
-window.addEventListener("scroll", () => {
-
-  const s = document.documentElement.scrollTop;
-
-  const h =
-    document.documentElement.scrollHeight -
-    window.innerHeight;
-
-  document.getElementById("spBar").style.width =
-    (s / h) * 100 + "%";
+    .to('#loader', {
+        y: '-100%',
+        duration: 0.9,
+        ease: 'power4.inOut'
+    });
 
 });
 
-// REVEAL
+// SCROLL PROGRESS
+
+window.addEventListener('scroll', () => {
+
+    const scrollTop = document.documentElement.scrollTop;
+
+    const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+    document.getElementById('spBar').style.width =
+        (scrollTop / docHeight) * 100 + '%';
+
+});
+
+// REVEAL ANIMATION
 
 const observer = new IntersectionObserver((entries) => {
 
-  entries.forEach((entry) => {
+    entries.forEach((entry) => {
 
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
 
-  });
+    });
 
 }, {
-  threshold: 0.1
+    threshold: 0.1
 });
 
-document.querySelectorAll(".reveal").forEach((el) => {
-  observer.observe(el);
+document.querySelectorAll('.reveal').forEach((el) => {
+    observer.observe(el);
 });
 
 // CLOCK
 
 setInterval(() => {
 
-  document.getElementById("clock").textContent =
-    new Date().toLocaleTimeString(
-      "en-GB",
-      { hour12: false }
-    );
+    document.getElementById('clock').textContent =
+        new Date().toLocaleTimeString('en-GB', {
+            hour12: false
+        });
 
 }, 1000);
