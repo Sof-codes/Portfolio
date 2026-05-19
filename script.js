@@ -1,155 +1,68 @@
 // CURSOR
 
-const dot = document.getElementById('curDot');
-const ring = document.getElementById('curRing');
+const dot = document.getElementById("curDot");
+const ring = document.getElementById("curRing");
 
-let mx = 0;
-let my = 0;
+let mouseX = 0;
+let mouseY = 0;
 
-let rx = 0;
-let ry = 0;
+let ringX = 0;
+let ringY = 0;
 
-window.addEventListener('mousemove', (e) => {
-    mx = e.clientX;
-    my = e.clientY;
+window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
 });
 
-(function animateCursor() {
+function animateCursor() {
 
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
+    ringX += (mouseX - ringX) * 0.1;
+    ringY += (mouseY - ringY) * 0.1;
 
-    dot.style.left = mx + 'px';
-    dot.style.top = my + 'px';
+    dot.style.left = mouseX + "px";
+    dot.style.top = mouseY + "px";
 
-    ring.style.left = rx + 'px';
-    ring.style.top = ry + 'px';
+    ring.style.left = ringX + "px";
+    ring.style.top = ringY + "px";
 
     requestAnimationFrame(animateCursor);
+}
 
-})();
+animateCursor();
 
 // LOADER
 
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
 
     const tl = gsap.timeline({
-
         onComplete: () => {
-
-            document.getElementById('loader').style.display = 'none';
-
-            gsap.to('#heroEye', {
-                opacity: 1,
-                y: 0,
-                duration: 0.8,
-                delay: 0.1
-            });
-
-            gsap.to(['#hn1', '#hn2'], {
-                y: '0%',
-                stagger: 0.15,
-                duration: 1,
-                ease: 'power4.out',
-                delay: 0.2
-            });
-
-            gsap.to('#heroDesc', {
-                opacity: 1,
-                y: 0,
-                duration: 0.8,
-                delay: 0.5
-            });
-
-            gsap.to('#heroScroll', {
-                opacity: 1,
-                y: 0,
-                duration: 0.8,
-                delay: 0.7
-            });
+            document.getElementById("loader").style.display = "none";
         }
-
     });
 
-    tl.to('#ld1', {
-        y: '0%',
-        duration: 0.7,
-        ease: 'power4.out'
+    tl.to("#ldBar", {
+        width: "100%",
+        duration: 1.4
     })
 
-    .to('#ld2', {
-        y: '0%',
-        duration: 0.7,
-        ease: 'power4.out'
-    }, '-=.4')
-
-    .to('#ldSub', {
-        opacity: 1,
-        duration: 0.5
-    }, '-=.2')
-
-    .to('#ldBar', {
-        width: '100%',
-        duration: 1.2,
-        ease: 'power2.inOut'
-    }, '-=.3')
-
-    .to(['#ld1', '#ld2'], {
-        y: '-110%',
-        stagger: 0.08,
-        duration: 0.5,
-        ease: 'power4.in'
-    }, '+=.1')
-
-    .to('#loader', {
-        y: '-100%',
-        duration: 0.9,
-        ease: 'power4.inOut'
+    .to("#loader", {
+        y: "-100%",
+        duration: 1
     });
 
 });
 
 // SCROLL PROGRESS
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
 
     const scrollTop = document.documentElement.scrollTop;
 
-    const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
+    const height =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
 
-    document.getElementById('spBar').style.width =
-        (scrollTop / docHeight) * 100 + '%';
+    document.getElementById("spBar").style.width =
+        (scrollTop / height) * 100 + "%";
 
 });
-
-// REVEAL ANIMATION
-
-const observer = new IntersectionObserver((entries) => {
-
-    entries.forEach((entry) => {
-
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-
-    });
-
-}, {
-    threshold: 0.1
-});
-
-document.querySelectorAll('.reveal').forEach((el) => {
-    observer.observe(el);
-});
-
-// CLOCK
-
-setInterval(() => {
-
-    document.getElementById('clock').textContent =
-        new Date().toLocaleTimeString('en-GB', {
-            hour12: false
-        });
-
-}, 1000);
