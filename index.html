@@ -3,213 +3,339 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Diksha Bhalerao — Full Stack Developer</title>
 
     <meta
         name="description"
-        content="Full Stack Developer — React.js, PostgreSQL, REST APIs. BCA Graduate, Pune. Open to international opportunities."
+        content="Full Stack Developer — React.js, PostgreSQL, REST APIs."
     />
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400&display=swap"
         rel="stylesheet"
     />
 
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
 
+    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
 
-<!-- CURSOR -->
-<div class="cur-dot" id="curDot"></div>
-<div class="cur-ring" id="curRing"></div>
+    <!-- CURSOR -->
+    <div class="cur-dot" id="curDot"></div>
+    <div class="cur-ring" id="curRing"></div>
 
-<!-- SCROLL PROGRESS -->
-<div class="sp-bar" id="spBar"></div>
+    <!-- SCROLL BAR -->
+    <div class="sp-bar" id="spBar"></div>
 
-<!-- LOADER -->
-<div id="loader">
-    <div class="ld-name">
-        <span id="ld1">DIKSHA</span>
-    </div>
+    <!-- LOADER -->
+    <div id="loader">
 
-    <div class="ld-name">
-        <span id="ld2">BHALERAO</span>
-    </div>
-
-    <div class="ld-sub" id="ldSub">
-        FULL STACK DEVELOPER // PUNE, INDIA
-    </div>
-
-    <div class="ld-bar-wrap">
-        <div class="ld-bar" id="ldBar"></div>
-    </div>
-</div>
-
-<!-- NAV -->
-<nav>
-    <div class="nav-brand">DB // 2026</div>
-
-    <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Work</a>
-        <a href="#skills">Skills</a>
-        <a href="#certs">Certs</a>
-        <a href="#contact" class="nav-cta">Contact</a>
-    </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-
-    <div class="hero-bg-text">DEVELOPER</div>
-
-    <div class="hero-eyebrow" id="heroEye">
-        BCA SCIENCE // SPPU, PUNE // 2026
-    </div>
-
-    <div class="hero-name">
-        <span class="line" id="hn1">DIKSHA</span>
-        <span class="line italic" id="hn2">Bhalerao</span>
-    </div>
-
-    <div class="hero-bottom">
-
-        <div class="hero-desc" id="heroDesc">
-            Full Stack Developer.<br />
-            React.js · PostgreSQL · REST APIs.<br />
-            Building things that ship.
+        <div class="ld-name">
+            <span id="ld1">DIKSHA</span>
         </div>
 
-        <div class="hero-scroll" id="heroScroll">
-            <div class="scroll-line"></div>
-            SCROLL
+        <div class="ld-name">
+            <span id="ld2">BHALERAO</span>
+        </div>
+
+        <div class="ld-sub" id="ldSub">
+            FULL STACK DEVELOPER // PUNE, INDIA
+        </div>
+
+        <div class="ld-bar-wrap">
+            <div class="ld-bar" id="ldBar"></div>
         </div>
 
     </div>
-</section>
 
-<!-- ABOUT -->
-<section id="about">
+    <!-- NAVBAR -->
+    <nav>
 
-    <div class="s-label">01 // Philosophy</div>
+        <div class="nav-brand">DB // 2026</div>
 
-    <div class="about-grid">
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact" class="nav-cta">Contact</a>
+        </div>
 
-        <div>
+    </nav>
 
-            <h2 class="s-head reveal">
-                Merging logic<br />
-                with aesthetic<br />
-                <em style="font-style: italic; color: var(--rust)">
-                    precision.
-                </em>
-            </h2>
+    <!-- HERO -->
+    <section class="hero">
 
-            <div style="margin-top: 50px">
+        <div class="hero-bg-text">DEVELOPER</div>
 
-                <p class="reveal reveal-delay-1">
-                    I build real, deployed products — not tutorial clones.
-                    Every line of code I write is intentional,
-                    every interface I design is human-centred.
+        <div class="hero-eyebrow" id="heroEye">
+            BCA SCIENCE // SPPU, PUNE // 2026
+        </div>
+
+        <div class="hero-name">
+            <span class="line" id="hn1">DIKSHA</span>
+            <span class="line italic" id="hn2">Bhalerao</span>
+        </div>
+
+        <div class="hero-bottom">
+
+            <div class="hero-desc" id="heroDesc">
+                Full Stack Developer.<br />
+                React.js · PostgreSQL · REST APIs.<br />
+                Building things that ship.
+            </div>
+
+            <div class="hero-scroll" id="heroScroll">
+                <div class="scroll-line"></div>
+                SCROLL
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="s-label">01 // Philosophy</div>
+
+        <h2 class="s-head">
+            Merging logic with aesthetic precision.
+        </h2>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I build real deployed products — not tutorial clones.
                 </p>
 
-                <p class="reveal reveal-delay-2">
-                    Ranked 1st in my department in Year 1 and 2nd in Year 2,
-                    with an average SGPA of 9.35 across five semesters.
-                    I pair academic rigour with independent learning —
-                    12+ certifications earned on my own initiative.
+                <p>
+                    Ranked 1st in department in Year 1 and 2nd in Year 2.
                 </p>
 
-                <p class="reveal reveal-delay-3">
-                    Currently seeking remote international internships
-                    where I can contribute from Day 1.
+                <p>
+                    Seeking remote international opportunities.
                 </p>
 
             </div>
 
-            <div class="about-stats reveal reveal-delay-4">
+            <div class="about-side">
 
-                <div class="stat-box">
-                    <div class="stat-num">9.35</div>
-                    <div class="stat-label">
-                        Avg SGPA<br />
-                        Sem 1–5
-                    </div>
+                <div class="interest-label">Beyond the screen</div>
+
+                <div class="interest-item">
+                    <span class="int-dot"></span>
+                    Sketching & Illustration
                 </div>
 
-                <div class="stat-box">
-                    <div class="stat-num">12+</div>
-                    <div class="stat-label">
-                        Infosys<br />
-                        Certificates
-                    </div>
+                <div class="interest-item">
+                    <span class="int-dot"></span>
+                    Journaling
                 </div>
 
-                <div class="stat-box">
-                    <div class="stat-num">3</div>
-                    <div class="stat-label">
-                        Deployed<br />
-                        Projects
-                    </div>
-                </div>
-
-                <div class="stat-box">
-                    <div class="stat-num">1st</div>
-                    <div class="stat-label">
-                        Dept Rank<br />
-                        Year 1
-                    </div>
+                <div class="interest-item">
+                    <span class="int-dot"></span>
+                    Designing
                 </div>
 
             </div>
 
         </div>
 
-        <div class="about-side reveal">
+    </section>
 
-            <div class="interest-label">Beyond the screen</div>
+    <!-- PROJECTS -->
+    <section id="projects">
 
-            <div class="interest-item">
-                <span class="int-dot"></span>
-                Sketching & Illustration
+        <div class="s-label">02 // Selected Work</div>
+
+        <h2 class="s-head light">Archive.</h2>
+
+        <div class="proj-list">
+
+            <!-- PROJECT 1 -->
+            <div class="proj-item">
+
+                <div class="proj-num">01</div>
+
+                <div class="proj-info">
+
+                    <div class="proj-name">PetHaven</div>
+
+                    <div class="proj-tags">
+                        <span class="proj-tag">React.js</span>
+                        <span class="proj-tag">PostgreSQL</span>
+                        <span class="proj-tag">REST API</span>
+                    </div>
+
+                    <div class="proj-desc">
+                        Full stack pet adoption platform with responsive UI.
+                    </div>
+
+                </div>
+
+                <div class="proj-links">
+
+                    <a
+                        href="https://pethaven123.rf.gd/"
+                        target="_blank"
+                        class="proj-link"
+                    >
+                        Live Site ↗
+                    </a>
+
+                    <a
+                        href="https://github.com/sof-codes/pethaven"
+                        target="_blank"
+                        class="proj-link ghost"
+                    >
+                        GitHub ↗
+                    </a>
+
+                </div>
+
             </div>
 
-            <div class="interest-item">
-                <span class="int-dot"></span>
-                Reading Books
-            </div>
+            <!-- PROJECT 2 -->
+            <div class="proj-item">
 
-            <div class="interest-item">
-                <span class="int-dot"></span>
-                Writing Songs
-            </div>
+                <div class="proj-num">02</div>
 
-            <div class="interest-item">
-                <span class="int-dot"></span>
-                Journaling
-            </div>
+                <div class="proj-info">
 
-            <div class="interest-item">
-                <span class="int-dot"></span>
-                Designing
-            </div>
+                    <div class="proj-name">BookHaven</div>
 
-            <div class="interest-item">
-                <span class="int-dot"></span>
-                Spanish (Beginner)
+                    <div class="proj-tags">
+                        <span class="proj-tag">React.js</span>
+                        <span class="proj-tag">JavaScript</span>
+                    </div>
+
+                    <div class="proj-desc">
+                        Online bookstore with dynamic filtering and modern UI.
+                    </div>
+
+                </div>
+
+                <div class="proj-links">
+
+                    <a
+                        href="https://sof-codes.github.io/BookHaven/"
+                        target="_blank"
+                        class="proj-link"
+                    >
+                        Live Site ↗
+                    </a>
+
+                    <a
+                        href="https://github.com/sof-codes/BookHaven"
+                        target="_blank"
+                        class="proj-link ghost"
+                    >
+                        GitHub ↗
+                    </a>
+
+                </div>
+
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+    <!-- SKILLS -->
+    <section id="skills">
 
-<script src="script.js"></script>
+        <div class="s-label">03 // Skills</div>
+
+        <h2 class="s-head">Toolkit.</h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-block">
+
+                <div class="skill-block-label">Languages</div>
+
+                <div class="skill-pills">
+
+                    <span class="skill-pill">JavaScript</span>
+                    <span class="skill-pill">TypeScript</span>
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-pill">Java</span>
+
+                </div>
+
+            </div>
+
+            <div class="skill-block">
+
+                <div class="skill-block-label">Frontend</div>
+
+                <div class="skill-pills">
+
+                    <span class="skill-pill">React.js</span>
+                    <span class="skill-pill">HTML5</span>
+                    <span class="skill-pill">CSS3</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <footer id="contact">
+
+        <div class="contact-cta">
+            Let's build.
+        </div>
+
+        <div class="contact-grid">
+
+            <div>
+
+                <div class="contact-group-label">Direct</div>
+
+                <a href="mailto:db040293@gmail.com" class="contact-link">
+                    db040293@gmail.com
+                </a>
+
+                <a href="tel:+917972971102" class="contact-link">
+                    +91 7972971102
+                </a>
+
+            </div>
+
+            <div>
+
+                <div class="contact-group-label">Online</div>
+
+                <a
+                    href="https://github.com/sof-codes"
+                    target="_blank"
+                    class="contact-link"
+                >
+                    GitHub ↗
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
 </body>
 </html>
