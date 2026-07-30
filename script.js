@@ -8,6 +8,32 @@
    no JS tracking needed. */
 
 /* ── 2. CINEMATIC LOADER ─────────────────────── */
+/* Safety net: if GSAP fails to load (CDN blocked, offline, ad blocker,
+   slow network) the loader must never stay stuck on screen forever. */
+function hideLoaderInstantly() {
+    const loader = document.getElementById('loader');
+    if (loader) loader.style.display = 'none';
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    ['heroEye', 'heroDesc', 'heroScroll'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) { el.style.opacity = '1'; el.style.transform = 'none'; }
+    });
+    ['hn1', 'hn2'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.transform = 'translateY(0%)';
+    });
+}
+
+// Hard timeout — if the GSAP loader animation hasn't finished within 4s
+// of window load for ANY reason, force the page to reveal itself.
+window.addEventListener('load', () => {
+    setTimeout(hideLoaderInstantly, 4000);
+});
+
+if (typeof gsap === 'undefined') {
+    // GSAP didn't load at all — skip animation entirely, reveal now.
+    window.addEventListener('DOMContentLoaded', hideLoaderInstantly);
+} else {
 window.addEventListener('load', () => {
     const tl = gsap.timeline({
         onComplete: () => {
@@ -47,6 +73,7 @@ window.addEventListener('load', () => {
             ease: 'power4.inOut'
         });
 });
+}
 
 
 /* ── 3. HERO ENTRANCE ────────────────────────── */
