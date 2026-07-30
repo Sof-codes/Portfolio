@@ -29,7 +29,7 @@ body {
     color: var(--ink);
     font-family: var(--sans);
     overflow-x: hidden;
-    cursor: none;
+    cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI4IDI4Ij4KPGRlZnM+CjxyYWRpYWxHcmFkaWVudCBpZD0iZyIgY3g9IjM4JSIgY3k9IjMyJSIgcj0iNjUlIj4KPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0ZGRkRGNyIvPgo8c3RvcCBvZmZzZXQ9IjI4JSIgc3RvcC1jb2xvcj0iI0YwRDlBOCIvPgo8c3RvcCBvZmZzZXQ9IjYyJSIgc3RvcC1jb2xvcj0iI0I4OTc1QSIvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4QTZCM0EiLz4KPC9yYWRpYWxHcmFkaWVudD4KPC9kZWZzPgo8Y2lyY2xlIGN4PSIxNCIgY3k9IjE0IiByPSI5IiBmaWxsPSJ1cmwoI2cpIiBzdHJva2U9IiMwQTBBMEEiIHN0cm9rZS1vcGFjaXR5PSIwLjI1IiBzdHJva2Utd2lkdGg9IjAuNzUiLz4KPGVsbGlwc2UgY3g9IjExIiBjeT0iMTAuNSIgcng9IjMiIHJ5PSIyIiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjc1Ii8+Cjwvc3ZnPg==") 14 14, auto;
     -webkit-font-smoothing: antialiased;
 }
 a { text-decoration: none; color: inherit; }
@@ -46,25 +46,10 @@ body::before {
 }
 
 /* ── CURSOR ──────────────────────────────────── */
-.cur-dot {
-    position: fixed;
-    width: 6px;
-    height: 6px;
-    background: var(--ink);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-}
-.cur-ring {
-    position: fixed;
-    width: 36px;
-    height: 36px;
-    border: 1px solid var(--gold);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
-    transform: translate(-50%, -50%);
+/* Normal system cursor, styled as a glossy orb (see body{cursor} above).
+   Interactive elements swap to a larger rust-toned glossy orb on hover. */
+a, button, .interest-item, .skill-pill {
+    cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNCIgaGVpZ2h0PSIzNCIgdmlld0JveD0iMCAwIDM0IDM0Ij4KPGRlZnM+CjxyYWRpYWxHcmFkaWVudCBpZD0iZyIgY3g9IjM4JSIgY3k9IjMyJSIgcj0iNjUlIj4KPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0ZGRjZFRSIvPgo8c3RvcCBvZmZzZXQ9IjI4JSIgc3RvcC1jb2xvcj0iI0U4QTg3OSIvPgo8c3RvcCBvZmZzZXQ9IjYyJSIgc3RvcC1jb2xvcj0iI0M0NjAyQSIvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4QTNFMTUiLz4KPC9yYWRpYWxHcmFkaWVudD4KPC9kZWZzPgo8Y2lyY2xlIGN4PSIxNyIgY3k9IjE3IiByPSIxMSIgZmlsbD0idXJsKCNnKSIgc3Ryb2tlPSIjMEEwQTBBIiBzdHJva2Utb3BhY2l0eT0iMC4yNSIgc3Ryb2tlLXdpZHRoPSIwLjc1Ii8+CjxlbGxpcHNlIGN4PSIxMy41IiBjeT0iMTMiIHJ4PSIzLjYiIHJ5PSIyLjQiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuOCIvPgo8L3N2Zz4=") 17 17, pointer;
 }
 
 /* ── LOADER ──────────────────────────────────── */
