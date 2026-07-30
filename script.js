@@ -3,44 +3,9 @@
    script.js
 ═══════════════════════════════════════════════ */
 
-/* ── 1. CUSTOM CURSOR ────────────────────────── */
-const curDot  = document.getElementById('curDot');
-const curRing = document.getElementById('curRing');
-
-let mouseX = 0, mouseY = 0;
-let ringX  = 0, ringY  = 0;
-
-window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-});
-
-(function animateCursor() {
-    // Dot follows instantly
-    curDot.style.left = mouseX + 'px';
-    curDot.style.top  = mouseY + 'px';
-
-    // Ring lags behind for smooth feel
-    ringX += (mouseX - ringX) * 0.12;
-    ringY += (mouseY - ringY) * 0.12;
-    curRing.style.left = ringX + 'px';
-    curRing.style.top  = ringY + 'px';
-
-    requestAnimationFrame(animateCursor);
-})();
-
-// Ring reacts to hoverable elements
-document.querySelectorAll('a, button, .interest-item, .skill-pill').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        curRing.style.transform  = 'translate(-50%, -50%) scale(1.6)';
-        curRing.style.borderColor = 'var(--rust)';
-    });
-    el.addEventListener('mouseleave', () => {
-        curRing.style.transform  = 'translate(-50%, -50%) scale(1)';
-        curRing.style.borderColor = 'var(--gold)';
-    });
-});
-
+/* ── 1. CURSOR ─────────────────────────────────
+   Using the normal system cursor (styled glossy via CSS) —
+   no JS tracking needed. */
 
 /* ── 2. CINEMATIC LOADER ─────────────────────── */
 window.addEventListener('load', () => {
@@ -221,9 +186,9 @@ const counterObserver = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             const el = entry.target;
             const raw = el.textContent.trim();
-            if (raw === '9.35') animateCounter(el, 9.35, '', true);
+            if (raw === '9.21') animateCounter(el, 9.21, '', true);
             if (raw === '12+')  animateCounter(el, 12, '+', false);
-            if (raw === '3')    animateCounter(el, 3, '', false);
+            if (raw === '5')    animateCounter(el, 5, '', false);
             counterObserver.unobserve(el);
         }
     });
